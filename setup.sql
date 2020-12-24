@@ -15,14 +15,16 @@ CREATE TABLE users (
   firstName TEXT,
   lang news_language,
   cash NUMERIC,
-  ownedStocks stock[]
+  ownedStocks stock[],
+  subscribedPublisherIDs TEXT[]
 );
 
 CREATE TABLE news (
   url TEXT PRIMARY KEY,
+  publisherID TEXT NOT NULL,
+  publisherName TEXT NOT NULL,
   lang TEXT NOT NULL,
   title TEXT  NOT NULL,
-  source TEXT NOT NULL,
   urlToImage TEXT,
   author TEXT,
   description TEXT,
